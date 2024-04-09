@@ -26,6 +26,7 @@ RUN apk update && apk add --no-cache \
     && echo '    py3-pip gcc python3-dev musl-dev linux-headers;' >> /home/dev/.bashrc \
     && echo '  pip install azure-cli --no-cache-dir --break-system-packages --no-warn-script-location;' >> /home/dev/.bashrc \
     && echo '  sudo apk del build-deps;' >> /home/dev/.bashrc \
+    && echo '  echo "export PATH=$PATH:$HOME/.local/bin" >> /home/dev/.bashrc' >> /home/dev/.bashrc \
     && echo '}' >> /home/dev/.bashrc \
     && echo 'function install-gcloud() { ' >> /home/dev/.bashrc \
     && echo '  curl -sSL https://sdk.cloud.google.com | bash;'  >> /home/dev/.bashrc \
